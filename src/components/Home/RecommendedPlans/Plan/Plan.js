@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import "./Plan.css"
 
 const Plan = (props) => {
     const {totalPlace,image,id,divisionName}=props.plan;
+    const navigate= useNavigate()
     const handleRecommendedPlan=()=>{
-        console.log("go to sinfle component");
+        navigate(`/DivisionTourPlan/${divisionName}`)
     }
     return (
         <div>
