@@ -4,6 +4,7 @@ const Home = () => {
     return (
         <div>
             this is home
+            This Is Home
         </div>
     );
 };
