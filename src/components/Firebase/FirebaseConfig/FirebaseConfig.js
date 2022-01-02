@@ -1,12 +1,10 @@
-import React from 'react';
-
-const FirebaseConfig = () => {
-    return (
-        <div>
-            FirebaseConfig
-            FirebaseConfig
-        </div>
-    );
+const firebaseConfig = {
+    apiKey: "AIzaSyDqx3r_AVSlWV3DtK6y7rYl0tAnXmK6_Ko",
+    authDomain: "bangal-tourism.firebaseapp.com",
+    projectId: "bangal-tourism",
+    storageBucket: "bangal-tourism.appspot.com",
+    messagingSenderId: "979411488647",
+    appId: "1:979411488647:web:4da223e8b58e6716d3cd22"
 };
 
-export default FirebaseConfig;
+export default firebaseConfig;
