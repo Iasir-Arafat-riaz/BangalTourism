@@ -18,6 +18,11 @@ const Header = () => {
                 </NavLink>
               </Navbar.Brand>
               <Navbar.Brand>
+                <NavLink to="/TourPlans" className="header-link">
+                 TourPlans
+                </NavLink>
+              </Navbar.Brand>
+              <Navbar.Brand>
                 <NavLink to="/About" className="header-link">
                   AboutUs
                 </NavLink>

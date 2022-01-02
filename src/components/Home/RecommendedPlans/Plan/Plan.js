@@ -4,10 +4,13 @@ import "./Plan.css"
 
 const Plan = (props) => {
     const {totalPlace,image,id,divisionName}=props.plan;
+    const handleRecommendedPlan=()=>{
+        console.log("go to sinfle component");
+    }
     return (
         <div>
            <Col  >
-        <Card className="m-2" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover',height: '200px', }} >
+        <Card onClick={handleRecommendedPlan} className="m-2 singleCard" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover', height:'250px',}} >
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
             <Card.Title>

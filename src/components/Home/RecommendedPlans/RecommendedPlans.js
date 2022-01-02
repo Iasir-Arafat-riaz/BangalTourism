@@ -13,7 +13,7 @@ const RecommendedPlans = () => {
     return (
         <div>
              <div className="custom-product">
-        <h2 className="common-header">Our Recommended Tour Plans</h2>
+        <h2 className="recommendedHeader">Recommended Tour Plans</h2>
         <Row xs={1} md={3} className="g-4 m-3">
           {plans.map((plan, index) => (
             <Plan key={index} plan={plan}></Plan>
