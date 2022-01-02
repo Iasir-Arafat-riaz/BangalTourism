@@ -39,7 +39,7 @@ const TourLists = () => {
           <div className="col-12 col-md-9">
             <div className="row">
               <h1 className="mb-4 custom_font">
-                All Our {divName} tourist places
+                All Our {divName} divison tourist places
               </h1>
               {tourPlaces.places.map((item) => (
                 <TourListCard key={item.placeId} {...item} division={divName} />
