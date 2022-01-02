@@ -1,0 +1,38 @@
+[
+    {
+        "divisionName": "Dhaka",
+        "totalPlace": "3",
+        "id": "1",
+        "image": "https://i.ibb.co/njDC8z5/Night-view-Dhaka-Bangladesh.jpg"
+    },
+    {
+        "divisionName": "Sylhet",
+        "totalPlace": "4",
+        "id": "2",
+        "image": "https://i.ibb.co/1YVv6nc/simanta-saha-o5w9f6h0-PZE-unsplash.jpg"
+    },
+    {
+        "divisionName": "Chittagong",
+        "totalPlace": "4",
+        "id": "3",
+        "image": "https://i.ibb.co/pvtrJKN/tahsin-islam-gc8-IPK97-h-E-unsplash.jpg"
+    },
+    {
+        "divisionName": "Khulna",
+        "totalPlace": "4",
+        "id": "4",
+        "image": "https://i.ibb.co/pvtrJKN/tahsin-islam-gc8-IPK97-h-E-unsplash.jpg"
+    },
+    {
+        "divisionName": "Rajshahi",
+        "totalPlace": "5",
+        "id": "4",
+        "image": "https://i.ibb.co/pvtrJKN/tahsin-islam-gc8-IPK97-h-E-unsplash.jpg"
+    },
+    {
+        "divisionName": "Barisal",
+        "totalPlace": "4",
+        "id": "6",
+        "image": "https://i.ibb.co/pvtrJKN/tahsin-islam-gc8-IPK97-h-E-unsplash.jpg"
+    }
+]

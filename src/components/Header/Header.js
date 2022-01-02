@@ -13,9 +13,15 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Navbar.Brand>
-                <NavLink to="/Home" className="header-link">Home</NavLink>
+                <NavLink to="/Home" className="header-link">
+                  Home
+                </NavLink>
               </Navbar.Brand>
-              <Navbar.Brand><NavLink to="/About" className="header-link">AboutUs</NavLink></Navbar.Brand>
+              <Navbar.Brand>
+                <NavLink to="/About" className="header-link">
+                  AboutUs
+                </NavLink>
+              </Navbar.Brand>
             </Nav>
           </Navbar.Collapse>
         </Container>
