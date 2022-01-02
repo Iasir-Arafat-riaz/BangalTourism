@@ -1,0 +1,13 @@
+.nav-header{
+    color: antiquewhite;
+    margin-right: 50px;
+}
+@media only screen and (max-width: 600px){
+    .nav-header{
+      margin: auto;
+    }
+}
+.header-link{
+    text-decoration: none;
+    color: whitesmoke;
+}
