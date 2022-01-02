@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import Plan from './Plan/Plan';
 
 const RecommendedPlans = () => {
     const [plans,setPlans]=useState([])
@@ -10,7 +12,14 @@ const RecommendedPlans = () => {
     console.log(plans);
     return (
         <div>
-            <h2>Recommended Plans Here</h2>
+             <div className="custom-product">
+        <h2 className="common-header">Our Recommended Tour Plans</h2>
+        <Row xs={1} md={3} className="g-4 m-3">
+          {plans.map((plan, index) => (
+            <Plan key={index} plan={plan}></Plan>
+          ))}
+        </Row>
+      </div>
         </div>
     );
 };
