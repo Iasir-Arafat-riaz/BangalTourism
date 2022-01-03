@@ -20,9 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Home" element={<Home></Home>}></Route>
-          <Route path="/About" element={<AboutUs/>}></Route>
-          <Route path="/DivisionTourPlan/:divName" element={<DivisionTourPlan/>}></Route>
-          <Route path="/TourPlans" element={<TourPlans/>}></Route>
+          <Route path="/About" element={<AboutUs />}></Route>
+          <Route
+            path="/DivisionTourPlan/:divName"
+            element={<DivisionTourPlan />}
+          ></Route>
+          {/* <Route path="/TourPlans" element={<TourPlans/>}></Route> */}
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
