@@ -44,7 +44,7 @@ const TourListCard = ({
                 <ReactStars
                   count={5}
                   size={20}
-                  value={rating}
+                  value={parseFloat(rating)}
                   isHalf={true}
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}

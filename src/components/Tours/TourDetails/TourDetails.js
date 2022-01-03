@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import ReactStars from "react-rating-stars-component";
 import { useParams } from "react-router";
+import { BiTimeFive } from "react-icons/bi";
 import Loading from "../../Shared/Loding/Loading";
 
 const TourDetails = () => {
@@ -38,7 +40,39 @@ const TourDetails = () => {
           </h1>
         </div>
       </div>
-      <div className="container"></div>
+      <div className="container mt-4">
+        <div className="d-flex align-items-center text-muted mb-3">
+          <ReactStars
+            count={5}
+            size={20}
+            value={parseFloat(rating)}
+            isHalf={true}
+            emptyIcon={<i className="far fa-star"></i>}
+            halfIcon={<i className="fa fa-star-half-alt"></i>}
+            fullIcon={<i className="fa fa-star"></i>}
+            activeColor="#ffd700"
+            edit={false}
+          />
+          ({review} Reviews)
+        </div>
+        <div className="d-flex align-items-center mb-3">
+          <BiTimeFive className="d-inline-block me-1" />
+          <span className="me-2 text-muted">{duration} days</span>
+        </div>
+        <div className="mb-3">
+          <span
+            className="badge rounded-pill bg-success p-2"
+            style={{ fontSize: "20px" }}
+          >
+            Price: ${price}
+          </span>
+        </div>
+        <h3 className="mb-2">Description:</h3>
+        <p className="custom_letterSpacing">{description}</p>
+        <button className="btn btn-outline-success mb-5 px-4 fw-bold">
+          Book Now
+        </button>
+      </div>
     </div>
   );
 };
