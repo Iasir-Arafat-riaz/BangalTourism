@@ -13,18 +13,49 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Navbar.Brand>
-                <NavLink to="/Home" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
-                 <b> Home</b>
+                <NavLink
+                  to="/Home"
+                  className="header-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "Crimson" : "white",
+                  })}
+                >
+                  <b> Home</b>
                 </NavLink>
               </Navbar.Brand>
               <Navbar.Brand>
-                <NavLink to="/TourPlans" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
-                 <b>TourPlans</b>
+                <NavLink
+                  to="/TourPlans"
+                  className="header-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "Crimson" : "white",
+                  })}
+                >
+                  <b>TourPlans</b>
                 </NavLink>
               </Navbar.Brand>
+
               <Navbar.Brand>
-                <NavLink to="/About" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
-                 <b> AboutUs</b>
+                <NavLink
+                  to="/Dashboard"
+                  className="header-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "Crimson" : "white",
+                  })}
+                >
+                  <b>Dashboard</b>
+                </NavLink>
+              </Navbar.Brand>
+
+              <Navbar.Brand>
+                <NavLink
+                  to="/About"
+                  className="header-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "Crimson" : "white",
+                  })}
+                >
+                  <b> AboutUs</b>
                 </NavLink>
               </Navbar.Brand>
             </Nav>

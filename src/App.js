@@ -12,6 +12,14 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import TourPlans from "./components/TourPlans/TourPlans";
 import DivisionTourPlan from "./components/Home/DivisionTourPlan/DivisionTourPlan";
 import TourLists from "./components/Tours/TourLists/TourLists";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
+import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
+import MyBooking from "./components/Dashboard/MyBooking/MyBooking";
+import ServiceReview from "./components/Dashboard/ServiceReview/ServiceReview";
+import Payment from "./components/Dashboard/Payment/Payment";
+import AddPlan from "./components/Dashboard/AddPlan/AddPlan";
+import ManagePlan from "./components/Dashboard/ManagePlan/ManagePlan";
+import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 
 function App() {
   return (
@@ -28,6 +36,16 @@ function App() {
           ></Route>
          
           <Route path="/TourPlans" element={<TourPlans />}></Route>
+
+          <Route path="/Dashboard" element={<Dashboard/>}>
+            <Route path="MyBooking" element={<MyBooking/>}></Route>
+            <Route path="ServiceReview" element={<ServiceReview/>}></Route>
+            <Route path="Payment" element={<Payment/>}></Route>
+            <Route path="AddPlan" element={<AddPlan/>}></Route>
+            <Route path="ManagePlan" element={<ManagePlan/>}></Route>
+            <Route path="ManageBooking" element={<ManageBooking/>}></Route>
+            <Route path="MakeAdmin" element={<MakeAdmin/>}></Route>
+          </Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
