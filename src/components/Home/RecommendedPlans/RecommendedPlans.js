@@ -8,7 +8,7 @@ const RecommendedPlans = () => {
   
   const [plans, setPlans] = useState([]);
   useEffect(() => {
-    fetch("plans.json")
+    fetch("https://glacial-shelf-30568.herokuapp.com/divisions")
       .then((res) => res.json())
       .then((data) => setPlans(data));
   }, []);
