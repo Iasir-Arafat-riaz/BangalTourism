@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loading from "../../Shared/Loding/Loading";
 import TourListCard from "./TourListCard";
-
+import { Slider } from "@mui/material";
 const TourLists = () => {
   const { divName, id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +35,13 @@ const TourLists = () => {
         <div className="row">
           <div className="col-12 col-md-3">
             <h5 className="my-3">Filter Your Result</h5>
+            <div className="price_filter">
+              <Slider
+                defaultValue={50}
+                aria-label="Default"
+                valueLabelDisplay="auto"
+              />
+            </div>
           </div>
           <div className="col-12 col-md-9">
             <div className="row">
