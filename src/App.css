@@ -1,38 +1,31 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 69, 255, 0.4);
+  clip-path: polygon(0px 0px, 100% 0px, 100% 90%, 0% 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tourLists_header {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url(https://preview.colorlib.com/theme/travelo/img/banner/xbradcam2.png.pagespeed.ic.hyZE9-LbsD.webp);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.custom_font {
+  font-family: "Caveat", cursive;
+  font-size: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.custom_font-2 {
+  font-size: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom_font_para {
+  font-size: 22px;
 }
