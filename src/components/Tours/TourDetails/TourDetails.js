@@ -2,12 +2,19 @@ import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useParams } from "react-router";
 import { BiTimeFive } from "react-icons/bi";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 import Loading from "../../Shared/Loding/Loading";
 
 const TourDetails = () => {
   const { tourId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [tourDetails, setTourDetails] = useState(null);
+  //   modal functionality
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+
   useEffect(async () => {
     const url = `https://glacial-shelf-30568.herokuapp.com/places/${tourId}`;
     const result = await fetch(url).then((res) => res.json());
@@ -69,10 +76,50 @@ const TourDetails = () => {
         </div>
         <h3 className="mb-2">Description:</h3>
         <p className="custom_letterSpacing">{description}</p>
-        <button className="btn btn-outline-success mb-5 px-4 fw-bold">
+        <button
+          className="btn btn-outline-success mb-5 px-4 fw-bold"
+          onClick={onOpenModal}
+        >
           Book Now
         </button>
       </div>
+      <Modal open={open} onClose={onCloseModal} center>
+        <div className="container p-4">
+          <h2>Please Enter Your Information</h2>
+          <form action="">
+            <div class="mb-3">
+              <label htmlFor="exampleInputEmail1" class="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label htmlFor="exampleInputPassword1" class="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3">
+              <label htmlFor="exampleCheck1" class="form-label">
+                Phone Number
+              </label>
+              <input type="text" class="form-control" id="exampleCheck1" />
+            </div>
+            <button type="submit" class="btn btn-outline-success">
+              Confirm Booking
+            </button>
+          </form>
+        </div>
+      </Modal>
     </div>
   );
 };
