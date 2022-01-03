@@ -92,6 +92,7 @@ const TourDetails = () => {
                 Email address
               </label>
               <input
+              required
                 type="email"
                 class="form-control"
                 id="exampleInputEmail1"
@@ -103,6 +104,8 @@ const TourDetails = () => {
                 Name
               </label>
               <input
+              required
+              
                 type="text"
                 class="form-control"
                 id="exampleInputPassword1"
@@ -112,7 +115,7 @@ const TourDetails = () => {
               <label htmlFor="exampleCheck1" class="form-label">
                 Phone Number
               </label>
-              <input type="text" class="form-control" id="exampleCheck1" />
+              <input required type="text" class="form-control" id="exampleCheck1" />
             </div>
             <button type="submit" class="btn btn-outline-success">
               Confirm Booking
