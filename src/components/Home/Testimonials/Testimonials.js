@@ -9,7 +9,7 @@ const Testimonials = () => {
   SwiperCore.use([Pagination, Autoplay]);
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
-  const reviewSlice=reviews.slice(0,5)
+  // const reviewSlice=reviews.slice(0,5)
   useEffect(() => {
     fetch("reviews.json")
       .then((res) => res.json())
@@ -30,7 +30,7 @@ const Testimonials = () => {
             </div>
 
             <Row xs={1} md={5} className="g-4 m-3">
-          {reviewSlice.map((review, index) => (
+          {reviews.map((review, index) => (
             <Review review={review} key={index}></Review>
           ))}
         </Row>

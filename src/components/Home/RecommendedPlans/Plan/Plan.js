@@ -7,7 +7,7 @@ const Plan = (props) => {
     const {totalPlace,image,id,divisionName}=props.plan;
     const navigate= useNavigate()
     const handleRecommendedPlan=()=>{
-        navigate(`/DivisionTourPlan/${divisionName}`)
+        navigate(`/DivisionTourPlan/${id}`)
     }
     return (
         <div>
