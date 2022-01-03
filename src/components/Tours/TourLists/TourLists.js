@@ -9,17 +9,25 @@ const TourLists = () => {
   const [tourPlaces, setTourPlaces] = useState(null);
 
   useEffect(async () => {
-    const result = await fetch(
-      "https://glacial-shelf-30568.herokuapp.com/places"
-    ).then((res) => res.json());
+    const url = `https://glacial-shelf-30568.herokuapp.com/place/${id}`;
+    console.log(url);
+    const result = await fetch(url).then((res) => res.json());
 
-    const tourPlaces = result.find((item) => item.id === id);
-    setTourPlaces(tourPlaces);
+    console.log(result);
+    setTourPlaces(result);
     setIsLoading(false);
   }, []);
   console.log(tourPlaces);
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (!tourPlaces) {
+    return (
+      <div className="container">
+        <h1>There is no match tours</h1>
+      </div>
+    );
   }
   return (
     <div className="">
@@ -48,7 +56,7 @@ const TourLists = () => {
               <h1 className="mb-4 custom_font">
                 All Our {divName} divison tourist places
               </h1>
-              {tourPlaces.places.map((item) => (
+              {tourPlaces.map((item) => (
                 <TourListCard key={item.placeId} {...item} division={divName} />
               ))}
             </div>

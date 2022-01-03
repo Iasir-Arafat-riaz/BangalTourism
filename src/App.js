@@ -12,6 +12,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import TourPlans from "./components/TourPlans/TourPlans";
 import DivisionTourPlan from "./components/Home/DivisionTourPlan/DivisionTourPlan";
 import TourLists from "./components/Tours/TourLists/TourLists";
+import TourDetails from "./components/Tours/TourDetails/TourDetails";
 
 function App() {
   return (
@@ -26,7 +27,11 @@ function App() {
             path="/DivisionTourPlan/:divName/:id"
             element={<TourLists />}
           ></Route>
-         
+          <Route
+            path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
+            element={<TourDetails />}
+          ></Route>
+
           <Route path="/TourPlans" element={<TourPlans />}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
