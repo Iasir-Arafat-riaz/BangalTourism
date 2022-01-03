@@ -11,7 +11,6 @@ import NotFound from "./components/NotFound/NotFound";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TourPlans from "./components/TourPlans/TourPlans";
 import DivisionTourPlan from "./components/Home/DivisionTourPlan/DivisionTourPlan";
-import TourLists from "./components/Tours/TourLists/TourLists";
 
 function App() {
   return (
@@ -21,18 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Home" element={<Home></Home>}></Route>
-
-          <Route path="/About" element={<AboutUs />}></Route>
-          <Route
-            path="/DivisionTourPlan/:divName/:id"
-            element={<TourLists />}
-          ></Route>
-          <Route path="/TourPlans" element={<TourPlans />}></Route>
-
           <Route path="/About" element={<AboutUs/>}></Route>
-          <Route path="/DivisionTourPlan/:id" element={<DivisionTourPlan/>}></Route>
+          <Route path="/DivisionTourPlan/:divName" element={<DivisionTourPlan/>}></Route>
           <Route path="/TourPlans" element={<TourPlans/>}></Route>
-
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
