@@ -5,17 +5,21 @@ import "./Plan.css";
 
 const Plan = (props) => {
 
+
+
   console.log(props.plan);
-  const { totalPlace, image, id, divisionName } = props.plan;
+  const { totalPlace, image, id, divisionName, _id } = props.plan;
   const navigate = useNavigate();
   const handleRecommendedPlan = () => {
-    navigate(`/DivisionTourPlan/${divisionName}/${id}`);
+    navigate(`/DivisionTourPlan/${divisionName}/${_id}`);
   };
   return (
-    
     <div>
+
     <Col>
         <Card onClick={handleRecommendedPlan} className="m-2 singleCard" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover', height:'250px',}} >
+
+      
 
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
@@ -25,14 +29,20 @@ const Plan = (props) => {
             </Card.Title>
             <Card.Text>
               <h6>
-                <span className="divPlaces text-center">Total {totalPlace} Places</span>
+                <span className="divPlaces text-center">
+                  Total {totalPlace} Places
+                </span>
               </h6>
             </Card.Text>
           </Card.Body>
 
           {/* <button className="purchaseButton" onClick={}><b>Purchase <FontAwesomeIcon icon={faTour} /></b></button> */}
         </Card>
+
       </Col> 
+
+     
+
     </div>
   );
 };

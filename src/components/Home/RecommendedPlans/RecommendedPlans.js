@@ -5,7 +5,6 @@ import "aos/dist/aos.css";
 import Aos from "aos";
 
 const RecommendedPlans = () => {
-  
   const [plans, setPlans] = useState([]);
   useEffect(() => {
     fetch("https://glacial-shelf-30568.herokuapp.com/divisions")
@@ -19,10 +18,12 @@ const RecommendedPlans = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <div >
+    <div>
       <div className="custom-product">
-        <h2 className="recommendedHeader text-center">Recommended Tour Plans</h2>
-        <Row data-aos="zoom-in"  xs={1} md={3} className="g-4 m-3">
+        <h2 className="recommendedHeader text-center">
+          Recommended Tour Plans
+        </h2>
+        <Row data-aos="zoom-in" xs={1} md={3} className="g-4 m-3">
           {plans.map((plan, index) => (
             <Plan key={index} plan={plan}></Plan>
           ))}
