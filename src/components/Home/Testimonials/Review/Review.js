@@ -14,7 +14,7 @@ const Review = (props) => {
           <Card.Body>
             <Card.Title>
               {" "}
-              <h6>
+              <h6 className='text-center'>
                 <b>
                   <FontAwesomeIcon icon={faUser} /> {name}
                 </b>
@@ -27,7 +27,7 @@ const Review = (props) => {
             </Card.Text>
 
             {rating === 5 ? (
-              <div className="icons">
+              <div className="icons text-center">
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
@@ -35,7 +35,7 @@ const Review = (props) => {
                 <FontAwesomeIcon icon={faStar} />
               </div>
             ) : rating < 5 && rating >= 4 ? (
-              <div >
+              <div  className="text-center" >
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
@@ -43,7 +43,7 @@ const Review = (props) => {
                 <FontAwesomeIcon icon={faStar} />
               </div>
             ) : rating < 4 && rating >= 3 ? (
-              <div >
+              <div className="text-center">
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
@@ -51,7 +51,7 @@ const Review = (props) => {
                 <FontAwesomeIcon icon={faStar} />
               </div>
             ) : rating < 3 && rating >= 2 ? (
-              <div >
+              <div className="text-center">
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
@@ -59,7 +59,7 @@ const Review = (props) => {
                 <FontAwesomeIcon icon={faStar} />
               </div>
             ) : (
-              <div >
+              <div className="text-center">
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
