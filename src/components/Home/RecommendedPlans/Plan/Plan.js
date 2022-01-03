@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Plan.css";
 
 const Plan = (props) => {
+
   console.log(props.plan);
   const { totalPlace, image, id, divisionName } = props.plan;
   const navigate = useNavigate();
@@ -22,6 +23,17 @@ const Plan = (props) => {
             height: "250px",
           }}
         >
+
+    const {totalPlace,image,id,divisionName}=props.plan;
+    const navigate= useNavigate()
+    const handleRecommendedPlan=()=>{
+        navigate(`/DivisionTourPlan/${id}`)
+    }
+    return (
+        <div>
+           <Col  >
+        <Card onClick={handleRecommendedPlan} className="m-2 singleCard" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover', height:'250px',}} >
+
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
             <Card.Title>
