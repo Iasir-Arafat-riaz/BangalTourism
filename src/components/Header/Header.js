@@ -13,18 +13,18 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Navbar.Brand>
-                <NavLink to="/Home" className="header-link">
-                  Home
+                <NavLink to="/Home" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
+                 <b> Home</b>
                 </NavLink>
               </Navbar.Brand>
               <Navbar.Brand>
-                <NavLink to="/TourPlans" className="header-link">
-                 TourPlans
+                <NavLink to="/TourPlans" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
+                 <b>TourPlans</b>
                 </NavLink>
               </Navbar.Brand>
               <Navbar.Brand>
-                <NavLink to="/About" className="header-link">
-                  AboutUs
+                <NavLink to="/About" className="header-link" style={({ isActive }) => ({ color: isActive ? 'Crimson' : 'white' })}>
+                 <b> AboutUs</b>
                 </NavLink>
               </Navbar.Brand>
             </Nav>
