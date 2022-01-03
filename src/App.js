@@ -21,18 +21,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/Home" element={<Home></Home>}></Route>
-
           <Route path="/About" element={<AboutUs />}></Route>
           <Route
             path="/DivisionTourPlan/:divName/:id"
             element={<TourLists />}
           ></Route>
+          <Route path="/About" element={<AboutUs />}></Route>
           <Route path="/TourPlans" element={<TourPlans />}></Route>
-
-          <Route path="/About" element={<AboutUs/>}></Route>
-          <Route path="/DivisionTourPlan/:id" element={<DivisionTourPlan/>}></Route>
-          <Route path="/TourPlans" element={<TourPlans/>}></Route>
-
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </BrowserRouter>
