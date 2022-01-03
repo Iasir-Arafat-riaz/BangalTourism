@@ -26,7 +26,7 @@ function App() {
             path="/DivisionTourPlan/:divName/:id"
             element={<TourLists />}
           ></Route>
-          <Route path="/About" element={<AboutUs />}></Route>
+         
           <Route path="/TourPlans" element={<TourPlans />}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>

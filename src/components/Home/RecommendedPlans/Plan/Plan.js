@@ -12,44 +12,27 @@ const Plan = (props) => {
     navigate(`/DivisionTourPlan/${divisionName}/${id}`);
   };
   return (
+    
     <div>
-      <Col>
-        <Card
-          onClick={handleRecommendedPlan}
-          className="m-2 singleCard"
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            height: "250px",
-          }}
-        >
-
-    const {totalPlace,image,id,divisionName}=props.plan;
-    const navigate= useNavigate()
-    const handleRecommendedPlan=()=>{
-        navigate(`/DivisionTourPlan/${id}`)
-    }
-    return (
-        <div>
-           <Col  >
+    <Col>
         <Card onClick={handleRecommendedPlan} className="m-2 singleCard" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover', height:'250px',}} >
 
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
             <Card.Title>
               {" "}
-              <h1 className="divName">{divisionName}</h1>
+              <h1 className="divName ">{divisionName}</h1>
             </Card.Title>
             <Card.Text>
               <h6>
-                <span className="divPlaces">Total {totalPlace} Places</span>
+                <span className="divPlaces text-center">Total {totalPlace} Places</span>
               </h6>
             </Card.Text>
           </Card.Body>
 
           {/* <button className="purchaseButton" onClick={}><b>Purchase <FontAwesomeIcon icon={faTour} /></b></button> */}
         </Card>
-      </Col>
+      </Col> 
     </div>
   );
 };
