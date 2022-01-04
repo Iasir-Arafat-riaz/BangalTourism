@@ -4,9 +4,9 @@ import Loading from '../../components/Shared/Loding/Loading';
 import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({children}) => {
-    const {user}=useAuth()
+    const {user,isLoading}=useAuth()
     const location=useLocation()
-    if(!user.email){
+    if(isLoading){
         return <Loading></Loading>
     }
     return (
