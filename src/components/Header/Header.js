@@ -1,9 +1,13 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
+
+  const { handaleGoogleSign, error, user } = useFirebase();
+
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg" className=".container">
@@ -62,6 +66,9 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      {error}
+      {user.displayName}
+      <button onClick={handaleGoogleSign}>Google sign</button>
     </div>
   );
 };
