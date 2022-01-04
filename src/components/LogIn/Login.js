@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import useAuth from '../../Hooks/useAuth';
 import Register from '../Register/Register';
 import './Login.css'
@@ -23,7 +24,8 @@ const handleSignIn = () => {
 
 const Login = () => {
     const [email, setEmail] = useState('');
-    const navigate = useNavigate();
+    const location =useLocation()
+    const navigate = useNavigate()
     const [password, setPassword] = useState('');
 
     const userLoginEmail = e => {
@@ -33,9 +35,9 @@ const Login = () => {
         setPassword(e.target.value)
     }
 
-    const { handaleGoogleSign, loginUser } = useAuth();
+    
 
-    const auth = getAuth();
+    const { handaleGoogleSign, loginUser } = useAuth();
 
     const handalelogin = (e) => {
         loginUser(email, password, location, navigate)
@@ -47,19 +49,9 @@ const Login = () => {
         // })
     }
 
-    const history = useNavigate()
-    const location = useLocation();
-    // const redirect_url = location.state?.from || "/Home";
+    
 
-    const handleGoogleSign = () => {
-
-        // setIsloading(true)
-        handaleGoogleSign(location, history)
-        // .then(() => {
-        //     history.push(redirect_url);
-        // })
-        // .finally(() => setIsloading(false))
-    }
+  
     return (
         <div className="body">
             <div className="loginContainer">
@@ -91,7 +83,7 @@ const Login = () => {
                             <br /><br />
                             <small className="d-none d-lg-block">----------------- Or sign in with -----------------</small>
                             <aside className="SocialIcon">
-                                <Button className="SignMethod" onClick={handleGoogleSign}>Google Sign In</Button>
+                                <Button className="SignMethod" onClick={()=>handaleGoogleSign(location,navigate)}>Google Sign In</Button>
                             </aside>
                         </form>
                     </div>

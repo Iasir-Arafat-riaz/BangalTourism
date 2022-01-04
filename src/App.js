@@ -22,6 +22,7 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
+import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
             <Route
               path="/DivisionTourPlan/:divName/:id"
-              element={<TourLists />}
+              element={<PrivateRoute><TourLists /></PrivateRoute>}
             ></Route>
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
@@ -50,7 +51,7 @@ function App() {
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
 
-            <Route path="/Dashboard" element={<Dashboard />}>
+            <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
