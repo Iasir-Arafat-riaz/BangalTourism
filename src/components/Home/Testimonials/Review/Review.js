@@ -7,6 +7,8 @@ import "./Review.css"
 const Review = (props) => {
     const{name,description,rating}=props.review
     console.log(description);
+    const descriptionFixed= `${description.slice(0,149)}......`
+    // console.log(descriptionFixed)
     return (
         <div>
             <Col data-aos="flip-left">
@@ -23,7 +25,7 @@ const Review = (props) => {
 
            {/* <small> {email}</small> */}
             <Card.Text>
-              <small className='reviewComment'><i class="far fa-comment "></i> {description}</small>
+              <small className='reviewComment'><i class="far fa-comment "></i> {descriptionFixed}</small>
             </Card.Text>
 
             {rating === 5 ? (
