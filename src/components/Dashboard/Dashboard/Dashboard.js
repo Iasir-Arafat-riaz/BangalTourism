@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 
 const Dashboard = () => {
+  const {handaleLogOut}=useAuth()
   return (
     <div className="MotherDashboard">
       <div style={{ positon: "relative" }} className="row ">
@@ -53,7 +55,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link
-                  // onClick={logOut}
+                  onClick={handaleLogOut}
                   to="/Home"
                   class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
                 >

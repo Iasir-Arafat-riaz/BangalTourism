@@ -1,6 +1,7 @@
 .nav-header{
     color: antiquewhite;
     margin-right: 50px;
+    margin-left: 50px;
 }
 @media only screen and (max-width: 600px){
     .nav-header{
@@ -10,4 +11,29 @@
 .header-link{
     text-decoration: none;
     color: whitesmoke;
+}
+.navName{
+    color: antiquewhite;
+}
+
+.loginButtonHdr{
+    /* margin-right: 40px; */
+    /* margin: auto; */
+    background-color: green;
+    border-radius: 5px;
+    color: honeydew;
+    border: 0px;
+   
+}
+.logOutHdr{
+    /* margin-right: 40px; */
+    /* margin: auto; */
+    background-color: rgb(175, 25, 6);
+    border-radius: 5px;
+    color: honeydew;
+    border: 0px;
+}
+.header-img{
+    width: 40px;
+    border-radius: 20px;
 }

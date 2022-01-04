@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import useAuth from '../../../Hooks/useAuth';
 import "./ServiceReview.css"
 const ServiceReview = () => {
     const [rating, setRating] = useState(1);
   const [userComment, setUserComment] = useState("");
-
+const {user}=useAuth()
   const comments = (e) => {
     setUserComment(e.target.value);
   };
@@ -29,8 +30,8 @@ const ServiceReview = () => {
 
   const reviewForm = () => {
     const commentObject = {
-      name: "demo name",
-    //   email: user.email,
+      name: user.displayName,
+      email: user.email,
     description: userComment,
     rating: rating,
     };

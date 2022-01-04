@@ -1,31 +1,34 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser,faStar } from '@fortawesome/free-solid-svg-icons'
-import { Card, Col } from 'react-bootstrap';
-import "./Review.css"
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faStar } from "@fortawesome/free-solid-svg-icons";
+import { Card, Col } from "react-bootstrap";
+import "./Review.css";
 
 const Review = (props) => {
-    const{name,description,rating}=props.review
-    console.log(description);
-    const descriptionFixed= `${description.slice(0,149)}......`
-    // console.log(descriptionFixed)
-    return (
-        <div>
-            <Col data-aos="flip-left">
+  const { name, description, rating, email } = props.review;
+  console.log(description);
+  const descriptionFixed = `${description.slice(0, 149)}......`;
+  // console.log(descriptionFixed)
+  return (
+    <div>
+      <Col data-aos="flip-left">
         <Card id="rev" className="singleReview">
           <Card.Body>
             <Card.Title>
               {" "}
-              <h6 className='text-center'>
+              <h6 className="text-center">
                 <b>
                   <FontAwesomeIcon icon={faUser} /> {name}
                 </b>
               </h6>
             </Card.Title>
-
-           {/* <small> {email}</small> */}
+          
+            <p className="text-center">{email}</p>
+        
             <Card.Text>
-              <small className='reviewComment'><i class="far fa-comment "></i> {descriptionFixed}</small>
+              <small className="reviewComment">
+                <i class="far fa-comment "></i> {descriptionFixed}
+              </small>
             </Card.Text>
 
             {rating === 5 ? (
@@ -37,7 +40,7 @@ const Review = (props) => {
                 <FontAwesomeIcon icon={faStar} />
               </div>
             ) : rating < 5 && rating >= 4 ? (
-              <div  className="text-center" >
+              <div className="text-center">
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
                 <FontAwesomeIcon className="icons" icon={faStar} />
@@ -72,8 +75,8 @@ const Review = (props) => {
           </Card.Body>
         </Card>
       </Col>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Review;
