@@ -11,7 +11,7 @@ const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   // const reviewSlice=reviews.slice(0,5)
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("https://glacial-shelf-30568.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

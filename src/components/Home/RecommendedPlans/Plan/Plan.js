@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import "./Plan.css";
 
 const Plan = (props) => {
+
+
+
   console.log(props.plan);
   const { totalPlace, image, id, divisionName, _id } = props.plan;
   const navigate = useNavigate();
@@ -12,16 +15,12 @@ const Plan = (props) => {
   };
   return (
     <div>
-      <Col>
-        <Card
-          onClick={handleRecommendedPlan}
-          className="m-2 singleCard"
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            height: "250px",
-          }}
-        >
+
+    <Col>
+        <Card onClick={handleRecommendedPlan} className="m-2 singleCard" style={{backgroundImage: `url(${image})`,backgroundSize: 'cover', height:'250px',}} >
+
+      
+
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
             <Card.Title>
@@ -39,7 +38,11 @@ const Plan = (props) => {
 
           {/* <button className="purchaseButton" onClick={}><b>Purchase <FontAwesomeIcon icon={faTour} /></b></button> */}
         </Card>
-      </Col>
+
+      </Col> 
+
+     
+
     </div>
   );
 };

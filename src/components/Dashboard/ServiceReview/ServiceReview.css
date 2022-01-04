@@ -1,0 +1,32 @@
+.reviewBtn{
+    margin: 10px;
+    padding: 5px 25px;
+    border-radius: 10px;
+    background-color: rgb(10, 14, 63);
+    color: white;
+    border: 0;
+  }
+
+  .reviewBtn:hover{
+      background-color: rgb(245, 154, 140);
+      color: rgb(41, 40, 37);
+  }
+
+  .reviewSubmit{
+      border: 0;
+      padding: 5px 12px;
+      border-radius: 5px;
+      background-color: rgb(109, 182, 99);
+  }
+  .reviewSubmit:hover{
+      background-color: black;
+      color: goldenrod;
+  }
+  .review{
+      padding-top: 40px;
+
+  }
+  .review textarea{
+      width: 50%;
+      padding: 10px 30px;
+  }

@@ -1,0 +1,154 @@
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #03a9f4; */
+    background-color: rgb(241, 245, 252);
+    transition: 0.5s;
+    height: 94vh;
+}
+
+/* .body.active{
+} */
+    /* background-color: rgb(180, 175, 175) !important; */
+
+    .loginContainer{
+        position: relative;
+        width: 800px;
+        height: 500px;
+    }
+
+
+
+.body button{
+    background-color: #fff;
+    padding: 6px 25px;
+    position: absolute;
+    margin-top: 90px;
+    border: 1px solid grey;
+}
+.form-container{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 420px;
+    background: #FCF6F5FF;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+}
+
+.box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.box h3{
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: purple;
+}
+
+#formBox{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.25);
+    transition: 0.35s ease-in-out;
+    overflow: hidden;
+}
+
+#formBox.active{
+    left: 53.3%;
+}
+
+.form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    transition: 0.5s;
+}
+
+#formBox .signinForm{
+    transition-delay: 0.25%;
+}
+
+#formBox.active .signinForm{
+    position: absolute;
+    left: -100%;
+    transition-delay: 0.25;
+}
+
+#formBox .signUpForm{
+    margin-left: 100%;
+}
+
+#formBox.active .signUpForm{
+    margin-left: 0%;
+}
+
+form h3 ,title{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333;
+}
+.form{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 10px 50px ;
+    margin-top: 5%;
+/* transition: 0.5s; */
+}
+.SignMethod .fab{
+font-size: 24px;
+background-color: rgb(238, 238, 238);
+width: 50px;
+padding: 5px 5px;
+/* height: 50px; */
+color: #03a9f4;
+/* margin-right: 50px; */
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.SignMethod{
+    
+}
+
+.SocialIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+    /* margin-top: 20px; */
+    /* column-gap: 30px; */
+}
+.submitBtn{
+    background-color: #89ABE3;
+    font-weight: 500;
+}
+
+
