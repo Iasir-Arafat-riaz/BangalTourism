@@ -61,7 +61,7 @@ const TourListCard = ({
             </div>
           </div>
         </div>
-        <Link to={`tour-details/${_id}`} className="btn btn-outline-dark">
+        <Link to={`tour-details/${_id}`} className="btn btn-outline-success">
           See Details
         </Link>
       </div>
