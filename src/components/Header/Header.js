@@ -6,14 +6,18 @@ import useFirebase from "../../Hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
-
   // const { handaleGoogleSign, error, user,handaleLogOut } = useFirebase();
-  const {  user,handaleLogOut } = useAuth();
+
+  // const {  user,handaleLogOut } = useAuth();
   
+
+
+  const { handaleGoogleSign, error, user, handaleLogOut, admin } = useAuth();
+  console.log(admin);
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg" >
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <h4 className="nav-header">Bangal Tourism</h4>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -41,18 +45,19 @@ const Header = () => {
                   <b>TourPlans</b>
                 </NavLink>
               </Navbar.Brand>
-
-              <Navbar.Brand>
-                <NavLink
-                  to="/Dashboard"
-                  className="header-link"
-                  style={({ isActive }) => ({
-                    color: isActive ? "Crimson" : "white",
-                  })}
-                >
-                  <b>Dashboard</b>
-                </NavLink>
-              </Navbar.Brand>
+              {user.uid && (
+                <Navbar.Brand>
+                  <NavLink
+                    to="/Dashboard"
+                    className="header-link"
+                    style={({ isActive }) => ({
+                      color: isActive ? "Crimson" : "white",
+                    })}
+                  >
+                    <b>Dashboard</b>
+                  </NavLink>
+                </Navbar.Brand>
+              )}
 
               <Navbar.Brand>
                 <NavLink
@@ -81,27 +86,27 @@ const Header = () => {
             </Nav>
           </Navbar.Collapse>
           {user.email && (
-              <img className="header-img" src={user.photoURL} alt="" />
-            )}
-            {user.email && (
-              <span className="text-light mx-1">{user?.displayName}</span>
-            )}
-            {user.email ? (
-              
-              <button onClick={handaleLogOut}  className="logOutHdr">
-               <b> Logout</b>
+            <img className="header-img" src={user.photoURL} alt="" />
+          )}
+          {user.email && (
+            <span className="text-light mx-1">{user?.displayName}</span>
+          )}
+          {user.email ? (
+            <button onClick={handaleLogOut} className="logOutHdr">
+              <b> Logout</b>
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="loginButtonHdr">
+                <b>Login</b>
               </button>
-            ) : (
-              <Link to="/login">
-                <button className="loginButtonHdr"><b>Login</b></button>
-              </Link>
-            )}
+            </Link>
+          )}
         </Container>
-      {/* <div className="userInfo"> */}
-     
-      {/* </div> */}
+        {/* <div className="userInfo"> */}
+
+        {/* </div> */}
       </Navbar>
-     
     </div>
   );
 };

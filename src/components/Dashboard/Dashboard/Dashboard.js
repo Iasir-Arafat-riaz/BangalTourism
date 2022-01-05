@@ -3,12 +3,16 @@ import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Dashboard = () => {
-  const {handaleLogOut,admin}=useAuth()
+
+  const { handaleLogOut, user, isLoading, admin } = useAuth();
+
+
   return (
-    <div className="MotherDashboard">
+    <div className="MotherDashboard container-fluid">
       <div style={{ positon: "relative" }} className="row ">
         <div className="col-md-2 dashboardItems">
           <div id="wrapper">
+
             <div class="bg-white" id="sidebar-wrapper">
               <div class="list-group list-group-flush my-3">
                {
@@ -75,6 +79,7 @@ const Dashboard = () => {
                   <i class="fas fa-power-off me-2"></i>Logout
                 </Link>
               </div>
+
             </div>
           </div>
         </div>

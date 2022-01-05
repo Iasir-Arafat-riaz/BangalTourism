@@ -1,10 +1,20 @@
-import { useEffect, useState } from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signOut, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
-import firebaseInitalize from '../components/Firebase/FirebaseInitalize/FirebaseInitalize';
+import { useEffect, useState } from "react";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signOut,
+  updateProfile,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import firebaseInitalize from "../components/Firebase/FirebaseInitalize/FirebaseInitalize";
 
 firebaseInitalize();
 
 const useFirebase = () => {
+
 
 
 
@@ -157,6 +167,7 @@ const useFirebase = () => {
         handaleLogOut,
         success
     }
+
 };
 
 export default useFirebase;

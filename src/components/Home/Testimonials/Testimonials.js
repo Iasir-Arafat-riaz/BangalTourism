@@ -18,7 +18,7 @@ const Testimonials = () => {
         setLoading(false);
       });
   }, []);
-  console.log(reviews);
+  
   return (
     <div>
       <section id="reviews" className="testimonials p-md-3">
