@@ -3,11 +3,16 @@
     padding: 3px 8px;
     border-radius: 10px;
     color: whitesmoke;
+    text-align: center;
 }
 .divName{
     color: white;
     font-size: 50px;
     text-shadow: 1px 1px 0px #1b0404;
+}
+
+.singleCard{
+ text-align: center;
 }
 
 @media only screen and (max-width: 600px){

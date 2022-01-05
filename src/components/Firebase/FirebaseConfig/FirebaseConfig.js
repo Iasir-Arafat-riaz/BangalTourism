@@ -5,6 +5,6 @@ const firebaseConfig = {
     storageBucket: "bangal-tourism.appspot.com",
     messagingSenderId: "979411488647",
     appId: "1:979411488647:web:4da223e8b58e6716d3cd22"
-  };
+};
 
-  export default firebaseConfig
+export default firebaseConfig;
