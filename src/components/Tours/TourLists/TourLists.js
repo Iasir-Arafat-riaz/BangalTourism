@@ -7,17 +7,38 @@ const TourLists = () => {
   const { divName, id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [tourPlaces, setTourPlaces] = useState(null);
+  const [mainTourPlace, setMainTourPlaces] = useState([]);
+  const [filterMaxPrice, setMaxPrice] = useState(0);
+  const [filterValue, setFilterValue] = useState(0);
 
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    setFilterValue(parseFloat(e.target.value));
+  };
   useEffect(async () => {
     const url = `https://glacial-shelf-30568.herokuapp.com/place/${id}`;
-    console.log(url);
-    const result = await fetch(url).then((res) => res.json());
 
-    console.log(result);
+    const result = await fetch(url).then((res) => res.json());
+    let maxPrice = 0;
+    if (result.length > 0) {
+      maxPrice = result.reduce((acc, item) => {
+        if (parseFloat(item.price) > acc) {
+          acc = item.price;
+        }
+        return acc;
+      }, 0);
+    }
+    setMaxPrice(maxPrice);
     setTourPlaces(result);
+    setMainTourPlaces(result);
     setIsLoading(false);
   }, []);
-  console.log(tourPlaces);
+
+  useEffect(() => {
+    const newTours = mainTourPlace.filter((item) => item.price <= filterValue);
+    setTourPlaces(newTours);
+  }, [filterValue]);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -42,12 +63,15 @@ const TourLists = () => {
       <div className="tourLists_places_container container py-4">
         <div className="row">
           <div className="col-12 col-md-3">
-            <h5 className="my-3">Filter Your Result</h5>
+            <h5 className="my-3 text-muted fw-bold mb-3">Filter Your Result</h5>
+            <h3>Price</h3>
             <div className="price_filter">
               <Slider
-                defaultValue={50}
+                defaultValue={filterMaxPrice}
                 aria-label="Default"
                 valueLabelDisplay="auto"
+                onChange={handleChange}
+                max={filterMaxPrice}
               />
             </div>
           </div>

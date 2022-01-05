@@ -23,7 +23,6 @@ import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
 
-
 function App() {
   return (
     <div className="App">
@@ -36,19 +35,14 @@ function App() {
             <Route path="/About" element={<AboutUs />}></Route>
 
             <Route path="/login" element={<Login />}></Route>
-            
 
+            <Route path="/:divName/:id" element={<TourLists />}></Route>
             <Route
-              path="/DivisionTourPlan/:divName/:id"
-              element={<TourLists />}
-            ></Route>
-            <Route
-              path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
+              path="/tour-details/:tourId"
               element={<TourDetails />}
             ></Route>
-
+            {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
-
 
             <Route path="/Dashboard" element={<Dashboard />}>
               <Route path="MyBooking" element={<MyBooking />}></Route>
