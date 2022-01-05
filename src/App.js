@@ -8,8 +8,6 @@ import Home from "./components/Home/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TourPlans from "./components/TourPlans/TourPlans";
-
-import DivisionTourPlan from "./components/Home/DivisionTourPlan/DivisionTourPlan";
 import TourLists from "./components/Tours/TourLists/TourLists";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
@@ -22,8 +20,16 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
+import Loading from "./components/Shared/Loding/Loading";
+import useAuth from "./Hooks/useAuth";
+import useFirebase from "./Hooks/useFirebase";
 
 function App() {
+  const { user, isLoading } = useFirebase();
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="App">
       <AuthProvider>
