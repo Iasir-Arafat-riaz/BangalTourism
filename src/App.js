@@ -39,26 +39,25 @@ function App() {
 
             <Route path="/:divName/:id" element={<TourLists />}></Route>
             <Route
-<<<<<<< HEAD
+
               path="/DivisionTourPlan/:divName/:id"
               element={<PrivateRoute><TourLists /></PrivateRoute>}
             ></Route>
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
-=======
+
               path="/tour-details/:tourId"
->>>>>>> origin/tourDetails-sagar
+
               element={<TourDetails />}
             ></Route>
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
-<<<<<<< HEAD
+
 
             <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
-=======
-            <Route path="/Dashboard" element={<Dashboard />}>
->>>>>>> origin/tourDetails-sagar
+
+           
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
