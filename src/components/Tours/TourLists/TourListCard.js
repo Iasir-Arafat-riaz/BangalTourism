@@ -13,10 +13,11 @@ const TourListCard = ({
   duration,
   rating,
   review,
+  colNum,
+  divisionName,
 }) => {
-  console.log(placeName, placeId, image, division, _id, rating, duration);
   return (
-    <div className="col-6 mb-3">
+    <div className={`col-${colNum || "6"} mb-3`}>
       <div className="card">
         <div className="position-relative">
           <img
@@ -35,12 +36,12 @@ const TourListCard = ({
           <div>
             <h2 className="mb-0 custom_font-2 custom_font">{placeName}</h2>
             <p className="text-muted fw-bold custom_font custom_font_para">
-              {division}
+              {divisionName}
             </p>
           </div>
           <div className="tour_info mb-2">
             <div className="row">
-              <div className="col-6 d-flex align-items-center text-muted">
+              <div className="col-7 d-flex align-items-center text-muted">
                 <ReactStars
                   count={5}
                   size={20}
@@ -54,14 +55,14 @@ const TourListCard = ({
                 />
                 ({review} Reviews)
               </div>
-              <div className="col-6 d-flex align-items-center justify-content-end">
+              <div className="col-5 d-flex align-items-center justify-content-end">
                 <BiTimeFive className="d-inline-block me-1" />
                 <span className="me-2 text-muted">{duration} days</span>
               </div>
             </div>
           </div>
         </div>
-        <Link to={`tour-details/${_id}`} className="btn btn-outline-dark">
+        <Link to={`/tour-details/${_id}`} className="btn btn-outline-success">
           See Details
         </Link>
       </div>

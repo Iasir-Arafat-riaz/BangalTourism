@@ -18,7 +18,7 @@ const TourDetails = () => {
   useEffect(async () => {
     const url = `https://glacial-shelf-30568.herokuapp.com/places/${tourId}`;
     const result = await fetch(url).then((res) => res.json());
-    console.log(result);
+
     setTourDetails(result);
     setIsLoading(false);
   }, [tourId]);
@@ -92,7 +92,7 @@ const TourDetails = () => {
                 Email address
               </label>
               <input
-              required
+                required
                 type="email"
                 class="form-control"
                 id="exampleInputEmail1"
@@ -104,8 +104,7 @@ const TourDetails = () => {
                 Name
               </label>
               <input
-              required
-              
+                required
                 type="text"
                 class="form-control"
                 id="exampleInputPassword1"
@@ -115,7 +114,12 @@ const TourDetails = () => {
               <label htmlFor="exampleCheck1" class="form-label">
                 Phone Number
               </label>
-              <input required type="text" class="form-control" id="exampleCheck1" />
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="exampleCheck1"
+              />
             </div>
             <button type="submit" class="btn btn-outline-success">
               Confirm Booking

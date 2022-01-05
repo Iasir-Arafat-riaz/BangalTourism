@@ -24,7 +24,6 @@ import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
 import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 
-
 function App() {
   return (
     <div className="App">
@@ -37,21 +36,29 @@ function App() {
             <Route path="/About" element={<AboutUs />}></Route>
 
             <Route path="/login" element={<Login />}></Route>
-            
 
+            <Route path="/:divName/:id" element={<TourLists />}></Route>
             <Route
+<<<<<<< HEAD
               path="/DivisionTourPlan/:divName/:id"
               element={<PrivateRoute><TourLists /></PrivateRoute>}
             ></Route>
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
+=======
+              path="/tour-details/:tourId"
+>>>>>>> origin/tourDetails-sagar
               element={<TourDetails />}
             ></Route>
-
+            {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
+<<<<<<< HEAD
 
             <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
+=======
+            <Route path="/Dashboard" element={<Dashboard />}>
+>>>>>>> origin/tourDetails-sagar
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
