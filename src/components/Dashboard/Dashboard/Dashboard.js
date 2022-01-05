@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 const Dashboard = () => {
-  const {handaleLogOut}=useAuth()
+  const {handaleLogOut,admin}=useAuth()
   return (
     <div className="MotherDashboard">
       <div style={{ positon: "relative" }} className="row ">
@@ -11,48 +11,61 @@ const Dashboard = () => {
           <div id="wrapper">
             <div class="bg-white" id="sidebar-wrapper">
               <div class="list-group list-group-flush my-3">
-                <Link
-                  to="/Dashboard/MyBooking"
-                  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-                >
-                  <i class="fas fa-project-diagram me-2"></i>My Booking
-                </Link>
-                <Link
+               {
+                 !admin &&  <Link
+                 to="/Dashboard/MyBooking"
+                 class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+               >
+                 <i class="fas fa-project-diagram me-2"></i>My Booking
+               </Link>
+               }
+                {
+                  !admin && <Link
                   to="/Dashboard/ServiceReview"
                   class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 >
                   <i class="fas fa-chart-line me-2"></i>Review
                 </Link>
-                <Link
-                  to="/Dashboard/Payment"
-                  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-                >
-                  <i class="fas fa-paperclip me-2"></i>Payment
-                </Link>
-                <Link
+                }
+               {
+                 !admin &&  <Link
+                 to="/Dashboard/Payment"
+                 class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+               >
+                 <i class="fas fa-paperclip me-2"></i>Payment
+               </Link>
+               }
+
+                {admin&& <Link
                   to="/Dashboard/AddPlan"
                   class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 >
                   <i class="fas fa-shopping-cart me-2"></i>Add Plan
-                </Link>
-                <Link
+                </Link>}
+                {
+                  admin && <Link
                   to="/Dashboard/ManagePlan"
                   class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 >
                   <i class="fas fa-gift me-2"></i>Manage Plan
                 </Link>
-                <Link
+                }
+                {
+                  admin && <Link
                   to="/Dashboard/ManageBooking"
                   class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
                 >
                   <i class="fas fa-comment-dots me-2"></i>Manage Order
                 </Link>
-                <Link
-                  to="/Dashboard/MakeAdmin"
-                  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
-                >
-                  <i class="fas fa-map-marker-alt me-2"></i>Make Admin
-                </Link>
+                }
+               {
+                 admin &&  <Link
+                 to="/Dashboard/MakeAdmin"
+                 class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+               >
+                 <i class="fas fa-map-marker-alt me-2"></i>Make Admin
+               </Link>
+               }
 
                 <Link
                   onClick={handaleLogOut}

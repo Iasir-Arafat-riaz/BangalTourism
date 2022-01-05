@@ -8,7 +8,7 @@ import "./Header.css";
 const Header = () => {
 
   // const { handaleGoogleSign, error, user,handaleLogOut } = useFirebase();
-  const { handaleGoogleSign, error, user,handaleLogOut } = useAuth();
+  const {  user,handaleLogOut } = useAuth();
   
 
   return (
@@ -53,6 +53,19 @@ const Header = () => {
                   <b>Dashboard</b>
                 </NavLink>
               </Navbar.Brand>
+
+              <Navbar.Brand>
+                <NavLink
+                  to="/Contact"
+                  className="header-link"
+                  style={({ isActive }) => ({
+                    color: isActive ? "Crimson" : "white",
+                  })}
+                >
+                  <b> Contact</b>
+                </NavLink>
+              </Navbar.Brand>
+
 
               <Navbar.Brand>
                 <NavLink

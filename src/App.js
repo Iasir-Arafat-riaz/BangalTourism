@@ -23,6 +23,7 @@ import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
 import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -39,25 +40,31 @@ function App() {
 
             <Route path="/:divName/:id" element={<TourLists />}></Route>
             <Route
-
               path="/DivisionTourPlan/:divName/:id"
-              element={<PrivateRoute><TourLists /></PrivateRoute>}
+              element={
+                <PrivateRoute>
+                  <TourLists />
+                </PrivateRoute>
+              }
             ></Route>
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
-
               path="/tour-details/:tourId"
-
               element={<TourDetails />}
             ></Route>
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
+            <Route path="/Contact" element={<Contact />}></Route>
 
-
-            <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
-
-           
+            <Route
+              path="/Dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            >
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
