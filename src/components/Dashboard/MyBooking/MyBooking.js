@@ -74,7 +74,17 @@ const MyBooking = () => {
                   <th scope="row">{index + 1}</th>
                   <td>{item.tourName}</td>
                   <td>{item.tourPrice}</td>
-                  <td>{item.isPaid ? "Paid" : "Not Paid"}</td>
+                  <td>
+                    {item.isPaid ? (
+                      <span className="badge rounded-pill bg-success p-2">
+                        Paid{" "}
+                      </span>
+                    ) : (
+                      <span className="badge rounded-pill bg-warning text-dark p-2">
+                        Not Paid
+                      </span>
+                    )}
+                  </td>
                   <td>
                     <button
                       className="btn"
