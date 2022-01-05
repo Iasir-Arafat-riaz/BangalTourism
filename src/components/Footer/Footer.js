@@ -4,7 +4,9 @@ import './Footer.css'
 import { Button, Container, Grid, Typography } from '@mui/material';
 
 const Footer = () => {
+
     return (
+
         <Container className="footer-bg" sx={{ marginTop: "150px" }}>
             <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} columns={{ xs: 4, sm: 8, md: 8 }} sx={{ marginBottom: "50px" }}>
                 <Grid xs={2} sm={2} md={2}>
