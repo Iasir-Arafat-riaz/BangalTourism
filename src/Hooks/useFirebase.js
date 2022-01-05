@@ -132,11 +132,11 @@ const useFirebase = () => {
     };
 
     // get web admin
-    // useEffect(() => {
-    //     fetch(`https://whispering-ridge-34346.herokuapp.com/users/${user?.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.Admin))
-    // }, [user?.email])
+    useEffect(() => {
+        fetch(`https://glacial-shelf-30568.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.Admin))
+    }, [user?.email])
 
 
 
