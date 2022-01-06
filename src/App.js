@@ -44,15 +44,13 @@ function App() {
 
             <Route path="/login" element={<Login />}></Route>
 
-            <Route path="/:divName/:id" element={<TourLists />}></Route>
-            <Route
-              path="/DivisionTourPlan/:divName/:id"
-              element={
-                <PrivateRoute>
-                  <TourLists />
-                </PrivateRoute>
-              }
-            ></Route>
+            <Route path="/:divName/:id" element={<PrivateRoute><TourLists /></PrivateRoute>}></Route>
+            
+
+
+
+
+
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
               path="/tour-details/:tourId"
