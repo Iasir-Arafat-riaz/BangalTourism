@@ -20,14 +20,11 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
-<<<<<<< HEAD
 import Loading from "./components/Shared/Loding/Loading";
 import useAuth from "./Hooks/useAuth";
 import useFirebase from "./Hooks/useFirebase";
-=======
 import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 import Contact from "./components/Contact/Contact";
->>>>>>> main
 
 function App() {
   const { user, isLoading } = useFirebase();
@@ -64,7 +61,7 @@ function App() {
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
-            <Route path="/Contact" element={<Contact />}></Route>
+            {/* <Route path="/Contact" element={<Contact />}></Route> */}
 
             <Route
               path="/Dashboard"
