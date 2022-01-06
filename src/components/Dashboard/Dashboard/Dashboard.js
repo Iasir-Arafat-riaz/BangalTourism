@@ -81,6 +81,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="col-md-10 dashboardOrigin">
+          
           <Outlet />
         </div>
       </div>

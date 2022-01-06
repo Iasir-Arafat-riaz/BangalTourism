@@ -26,6 +26,8 @@ import useFirebase from "./Hooks/useFirebase";
 import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 import Contact from "./components/Contact/Contact";
 import Pay from "./components/Payment/Pay/Pay"
+import DashboardDefault from "./components/Dashboard/DashboardDefault/DashboardDefault";
+
 
 function App() {
   const { user, isLoading } = useFirebase();
@@ -64,7 +66,7 @@ function App() {
 
 
             <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
-
+<Route path="/Dashboard" element={<DashboardDefault/>}></Route>
 
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>

@@ -1,0 +1,12 @@
+.dashboardDefault{
+    background-image: url("https://i.ibb.co/N9FKs5J/dash.jpg");
+    padding-top: 200px;
+    padding-bottom: 350px;
+    background-size: cover;
+}
+.dashboardText{
+    font-weight: 900;
+    color: antiquewhite;
+    text-align: center;
+    text-shadow: 1px 1px 0px #140b0b;
+}

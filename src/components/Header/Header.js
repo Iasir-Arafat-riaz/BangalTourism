@@ -1,19 +1,23 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useFirebase from "../../Hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
+  const navigate =useNavigate()
   // const { handaleGoogleSign, error, user,handaleLogOut } = useFirebase();
   const { user, handaleLogOut } = useAuth();
+  const siteNameHandler=()=>{
+    navigate("/Home")
+  }
 
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <h4 className="nav-header">Bangal Tourism</h4>
+          <h4 className="nav-header"><span onClick={siteNameHandler}>Bangal Tourism</span></h4>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
