@@ -59,6 +59,7 @@ const useFirebase = () => {
         navigate(destination);
         setSuccess("Your login successfully");
         setError("");
+        console.log(destination, "destination");
       })
       .catch((error) => {
         setError(error.message);
@@ -68,16 +69,17 @@ const useFirebase = () => {
   };
 
   // sign with google
-  const handaleGoogleSign = (location, history) => {
+  const handaleGoogleSign = (location, navigate) => {
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user);
+        navigate(location?.state?.from || "/");
         const user = result.user;
+
         saveUser(user.email, user.displayName, "PUT");
-        const destination = location?.state?.from || "/";
+
         setSuccess("Your login successfully");
-        history?.replace(destination);
       })
       .catch((error) => {
         setError(error.message);
@@ -125,11 +127,11 @@ const useFirebase = () => {
   };
 
   // get web admin
-  // useEffect(() => {
-  //     fetch(`https://whispering-ridge-34346.herokuapp.com/users/${user?.email}`)
-  //         .then(res => res.json())
-  //         .then(data => setAdmin(data.Admin))
-  // }, [user?.email])
+  useEffect(() => {
+    fetch(`https://glacial-shelf-30568.herokuapp.com/users/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.Admin));
+  }, [user?.email]);
 
   return {
     handaleGoogleSign,

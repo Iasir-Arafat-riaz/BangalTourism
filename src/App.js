@@ -20,9 +20,14 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
+<<<<<<< HEAD
 import Loading from "./components/Shared/Loding/Loading";
 import useAuth from "./Hooks/useAuth";
 import useFirebase from "./Hooks/useFirebase";
+=======
+import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
+import Contact from "./components/Contact/Contact";
+>>>>>>> main
 
 function App() {
   const { user, isLoading } = useFirebase();
@@ -44,13 +49,31 @@ function App() {
 
             <Route path="/:divName/:id" element={<TourLists />}></Route>
             <Route
+              path="/DivisionTourPlan/:divName/:id"
+              element={
+                <PrivateRoute>
+                  <TourLists />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route
+              path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
               path="/tour-details/:tourId"
               element={<TourDetails />}
             ></Route>
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
-            <Route path="/Dashboard" element={<Dashboard />}>
+            <Route path="/Contact" element={<Contact />}></Route>
+
+            <Route
+              path="/Dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            >
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>

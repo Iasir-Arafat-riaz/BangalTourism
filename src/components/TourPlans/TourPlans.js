@@ -70,7 +70,7 @@ const TourPlans = () => {
               />
             </div>
           </div>
-          <div className="col-12 col-md-10">
+          <div className="col-sm-12 col-md-10 ">
             <h1 className="custom_font mb-4">Our All tours plan</h1>
             {allTours.length < 1 ? (
               <h1></h1>

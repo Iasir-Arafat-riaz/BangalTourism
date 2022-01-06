@@ -1,0 +1,31 @@
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-form form input ,.contact-text{
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 600px) {
+    .contact-form form input ,.contact-text{
+        width: 80%;
+    }
+}
+#contact-submitBtn{
+    /* width: 30%; */
+    background-color: rgb(2, 57, 102);
+    color: blanchedalmond;
+    font-weight: 700;
+}
+#contact-submitBtn:hover{
+    background-color: rgb(22, 22, 21);
+    color: rgb(199, 164, 6);
+}
+.conatct-me{
+    text-align: center;
+    color: rgb(160, 123, 123);
+}
