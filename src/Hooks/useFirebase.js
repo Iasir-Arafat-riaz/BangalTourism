@@ -14,9 +14,6 @@ import firebaseInitalize from "../components/Firebase/FirebaseInitalize/Firebase
 firebaseInitalize();
 
 const useFirebase = () => {
-
-
-
   const [user, setUser] = useState({});
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -64,7 +61,7 @@ const useFirebase = () => {
         const destination = location?.state?.from || '/';
         navigate(destination);
         setSuccess("Your login successfully");
-        setError('');
+        setError("");
         console.log(destination, "destination");
       })
       .catch((error) => {
@@ -77,18 +74,16 @@ const useFirebase = () => {
 
   // sign with google
   const handaleGoogleSign = (location, navigate) => {
-
     setIsLoading(true);
     signInWithPopup(auth, googleProvider)
       .then(result => {
         setUser(result.user);
-        navigate(location?.state?.from || "/")
+        navigate(location?.state?.from || "/");
         const user = result.user;
 
-        saveUser(user.email, user.displayName, 'PUT');
+        saveUser(user.email, user.displayName, "PUT");
 
         setSuccess("Your login successfully");
-
       })
       .catch((error) => {
         setError(error.message);
@@ -143,17 +138,9 @@ const useFirebase = () => {
   // get web admin
   useEffect(() => {
     fetch(`https://glacial-shelf-30568.herokuapp.com/users/${user?.email}`)
-      .then(res => res.json())
-      .then(data => setAdmin(data.Admin))
-  }, [user?.email])
-
-
-
-
-
-
-
-
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.Admin));
+  }, [user?.email]);
 
   return {
     handaleGoogleSign,
@@ -164,9 +151,8 @@ const useFirebase = () => {
     isLoading,
     registerUser,
     handaleLogOut,
-    success
-  }
-
+    success,
+  };
 };
 
 export default useFirebase;

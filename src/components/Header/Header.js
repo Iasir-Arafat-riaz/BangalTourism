@@ -7,13 +7,7 @@ import "./Header.css";
 
 const Header = () => {
   // const { handaleGoogleSign, error, user,handaleLogOut } = useFirebase();
-
-  // const {  user,handaleLogOut } = useAuth();
-  
-
-
-  const { handaleGoogleSign, error, user, handaleLogOut, admin } = useAuth();
-  console.log(admin);
+  const { user, handaleLogOut } = useAuth();
 
   return (
     <div>
@@ -70,7 +64,6 @@ const Header = () => {
                   <b> Contact</b>
                 </NavLink>
               </Navbar.Brand>
-
 
               <Navbar.Brand>
                 <NavLink

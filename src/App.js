@@ -20,12 +20,12 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
-import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 import Loading from "./components/Shared/Loding/Loading";
 import useAuth from "./Hooks/useAuth";
 import useFirebase from "./Hooks/useFirebase";
-import Pay from "./components/Payment/Pay/Pay";
-import Contact from "./components/Contact/Contact"
+import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
+import Contact from "./components/Contact/Contact";
+import Pay from "./components/Payment/Pay/Pay"
 
 function App() {
   const { user, isLoading } = useFirebase();
