@@ -58,7 +58,7 @@ function App() {
               element={<TourDetails />}
             ></Route>
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
-            <Route path="/TourPlans" element={<TourPlans />}></Route>
+            <Route path="/TourPlans" element={<PrivateRoute><TourPlans /></PrivateRoute>}></Route>
 
             <Route path="/Contact" element={<Contact />}></Route>
 
