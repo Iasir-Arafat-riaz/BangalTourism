@@ -11,8 +11,8 @@
 
 .add-Packages-Plan form input,textarea{
     width: 40%;
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: ghostwhite;
     border-radius: 5px;
 }
@@ -22,4 +22,12 @@
         margin: 10px;
         padding: 10px;
     }
+}
+#addPlanBtn{
+    background-color: rgb(38, 38, 54);
+    color: wheat;
+}
+#addPlanBtn:hover{
+    background-color: rgb(0, 100, 139);
+    color: white;
 }
