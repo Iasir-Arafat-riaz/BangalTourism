@@ -115,8 +115,8 @@ const CheckoutForm = ({ cartProduct }) => {
         < >
             <form onSubmit={HandleSubmit} className="payment-form" style={{ display: "flex", justifyContent: 'center', marginTop: 20 }}>
                 <article
-                    className='shadow'
-                    style={{ background: "#fff", marginTop: 10, padding: 4, width: 500, marginBottom: 2 }}
+                    className='shadow-sm'
+                    style={{ background: "#fff", marginTop: 10, padding: 25, width: '60%', marginBottom: 2 }}
                 >
                     <CardElement
                         options={{
