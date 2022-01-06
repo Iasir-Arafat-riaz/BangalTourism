@@ -5,8 +5,9 @@ import { BiTimeFive } from "react-icons/bi";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import Loading from "../../Shared/Loding/Loading";
-
 import useFirebase from "../../../Hooks/useFirebase";
+
+
 
 const TourDetails = () => {
   const { user, isLoading } = useFirebase();

@@ -25,6 +25,7 @@ import Loading from "./components/Shared/Loding/Loading";
 import useAuth from "./Hooks/useAuth";
 import useFirebase from "./Hooks/useFirebase";
 import Pay from "./components/Payment/Pay/Pay";
+import Contact from "./components/Contact/Contact"
 
 function App() {
   const { user, isLoading } = useFirebase();
@@ -44,22 +45,22 @@ function App() {
 
             <Route path="/login" element={<Login />}></Route>
 
-            <Route path="/:divName/:id" element={<TourLists />}></Route>
-            <Route
+            <Route path="/:divName/:id" element={<PrivateRoute><TourLists /></PrivateRoute>}></Route>
+            
 
-              path="/DivisionTourPlan/:divName/:id"
-              element={<PrivateRoute><TourLists /></PrivateRoute>}
-            ></Route>
+
+
+
+
             <Route
               path="/DivisionTourPlan/:divName/:id/tour-details/:tourId"
-
               path="/tour-details/:tourId"
-
               element={<TourDetails />}
             ></Route>
             {/* "/DivisionTourPlan/:divName/:id/tour-details/:tourId" */}
             <Route path="/TourPlans" element={<TourPlans />}></Route>
 
+            <Route path="/Contact" element={<Contact />}></Route>
 
 
             <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>

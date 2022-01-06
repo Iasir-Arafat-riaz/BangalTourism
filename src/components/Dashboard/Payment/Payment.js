@@ -47,8 +47,8 @@ const Payment = () => {
                             return (
                                 <tr key={item._id}>
                                     <th scope="row">{index + 1}</th>
-                                    <td>{item.placeName}</td>
-                                    <td>{item.price}</td>
+                                    <td>{item.tourName}</td>
+                                    <td>{item.tourPrice}</td>
                                     <td>
                                         {item.isPaid ? (
                                             <span className="badge rounded-pill bg-success p-2">

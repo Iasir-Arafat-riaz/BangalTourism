@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useFirebase from "../../../Hooks/useFirebase";
@@ -134,9 +133,11 @@ const MyBooking = () => {
                         </button>
                     )}
                 </div>
-            </Modal>
-        </div>
-    );
+           
+
+      </Modal>
+    </div>
+  );
 };
 
 export default MyBooking;

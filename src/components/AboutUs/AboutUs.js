@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs = () => {
     return (
         <div>
-            <h2>About us component</h2>
+            <h2 className='text-center mt-2'>About Bangal Tourism LTD</h2>
         </div>
     );
 };
