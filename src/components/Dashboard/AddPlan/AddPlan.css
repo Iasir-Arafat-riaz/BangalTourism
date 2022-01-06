@@ -1,0 +1,25 @@
+.add-Packages-Plan form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+/* .add-Packages-Plan{
+    background-image: url(https://i.ibb.co/Jyqmttz/bg.png);
+} */
+
+.add-Packages-Plan form input,textarea{
+    width: 40%;
+    margin: 10px;
+    padding: 10px;
+    background-color: ghostwhite;
+    border-radius: 5px;
+}
+@media only screen and (max-width: 688px){
+    .add-Packages-Plan form input,textarea{
+        width: 70%;
+        margin: 10px;
+        padding: 10px;
+    }
+}
