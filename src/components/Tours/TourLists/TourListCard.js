@@ -17,7 +17,7 @@ const TourListCard = ({
   divisionName,
 }) => {
   return (
-    <div className={`col-${colNum || "6"} mb-3`}>
+    <div className={`col-${colNum || "6"} mb-3 `}>
       <div className="card">
         <div className="position-relative">
           <img

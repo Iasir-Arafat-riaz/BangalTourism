@@ -20,11 +20,12 @@ import ManageBooking from "./components/Dashboard/ManageBooking/ManageBooking";
 import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
+import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
 import Loading from "./components/Shared/Loding/Loading";
 import useAuth from "./Hooks/useAuth";
 import useFirebase from "./Hooks/useFirebase";
-import Contact from "./components/Contact/Contact";
-import PrivateRoute from "./Private/PrivateRoute/PrivateRoute"
+import Pay from "./components/Payment/Pay/Pay";
+import Contact from "./components/Contact/Contact"
 
 function App() {
   const { user, isLoading } = useFirebase();
@@ -61,14 +62,10 @@ function App() {
 
             <Route path="/Contact" element={<Contact />}></Route>
 
-            <Route
-              path="/Dashboard"
-              element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              }
-            >
+
+            <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
+
+
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
@@ -76,6 +73,8 @@ function App() {
               <Route path="ManagePlan" element={<ManagePlan />}></Route>
               <Route path="ManageBooking" element={<ManageBooking />}></Route>
               <Route path="MakeAdmin" element={<MakeAdmin />}></Route>
+              <Route path="Pay/:_id" element={<Pay />}></Route>
+              {/* <Route path="payment" element={<Payment />}></Route> */}
             </Route>
 
             <Route path="*" element={<NotFound></NotFound>}></Route>

@@ -6,7 +6,6 @@ import "./Review.css";
 
 const Review = (props) => {
   const { name, description, rating, email } = props.review;
-  console.log(description);
   const descriptionFixed = `${description.slice(0, 149)}......`;
   // console.log(descriptionFixed)
   return (

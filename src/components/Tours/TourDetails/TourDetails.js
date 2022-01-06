@@ -7,6 +7,8 @@ import { Modal } from "react-responsive-modal";
 import Loading from "../../Shared/Loding/Loading";
 import useFirebase from "../../../Hooks/useFirebase";
 
+
+
 const TourDetails = () => {
   const { user, isLoading } = useFirebase();
   const { tourId } = useParams();
@@ -29,6 +31,7 @@ const TourDetails = () => {
       ...orderInfo,
       tourName: tourDetails.placeName,
       tourPrice: tourDetails.price,
+      tourId: tourDetails._id,
     });
   };
   const onCloseModal = () => setOpen(false);
@@ -74,11 +77,23 @@ const TourDetails = () => {
     return <Loading />;
   }
 
+
+  // ,
+  // userUid: user.userUid,
+  // email: user.email,
+  // isPaid: false
+
+
+
   if (!tourDetails) {
     return <h1 className="text-center">There is no tour matched tour.</h1>;
   }
+
   const { placeName, image, description, price, review, duration, rating } =
     tourDetails;
+
+
+
   return (
     <div className="">
       <div className="tour_details_header position-relative">
@@ -98,9 +113,8 @@ const TourDetails = () => {
       <div className="container mt-4">
         {notification.length > 0 && (
           <p
-            className={`alert alert-${
-              notification.endsWith("later.") ? "danger" : "success"
-            }`}
+            className={`alert alert-${notification.endsWith("later.") ? "danger" : "success"
+              }`}
           >
             {notification}
           </p>
