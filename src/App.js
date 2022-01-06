@@ -8,8 +8,6 @@ import Home from "./components/Home/Home/Home";
 import NotFound from "./components/NotFound/NotFound";
 import AboutUs from "./components/AboutUs/AboutUs";
 import TourPlans from "./components/TourPlans/TourPlans";
-
-import DivisionTourPlan from "./components/Home/DivisionTourPlan/DivisionTourPlan";
 import TourLists from "./components/Tours/TourLists/TourLists";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
@@ -23,8 +21,17 @@ import TourDetails from "./components/Tours/TourDetails/TourDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import Login from "./components/LogIn/Login";
 import PrivateRoute from "./Private/PrivateRoute/PrivateRoute";
+import Loading from "./components/Shared/Loding/Loading";
+import useAuth from "./Hooks/useAuth";
+import useFirebase from "./Hooks/useFirebase";
+import Pay from "./components/Payment/Pay/Pay";
 
 function App() {
+  const { user, isLoading } = useFirebase();
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="App">
       <AuthProvider>
@@ -55,9 +62,9 @@ function App() {
 
 
 
-            <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute> }>
+            <Route path="/Dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}>
 
-           
+
               <Route path="MyBooking" element={<MyBooking />}></Route>
               <Route path="ServiceReview" element={<ServiceReview />}></Route>
               <Route path="Payment" element={<Payment />}></Route>
@@ -65,6 +72,8 @@ function App() {
               <Route path="ManagePlan" element={<ManagePlan />}></Route>
               <Route path="ManageBooking" element={<ManageBooking />}></Route>
               <Route path="MakeAdmin" element={<MakeAdmin />}></Route>
+              <Route path="Pay/:_id" element={<Pay />}></Route>
+              {/* <Route path="payment" element={<Payment />}></Route> */}
             </Route>
 
             <Route path="*" element={<NotFound></NotFound>}></Route>

@@ -1,28 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import useAuth from '../../Hooks/useAuth';
-import '../../Style/Style.css';
 import { Alert, Spinner } from 'react-bootstrap';
+import useAuth from '../../../Hooks/useAuth';
 
 
 
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = ({ cartProduct }) => {
 
+    const { price, _id } = cartProduct;
     const stripe = useStripe();
     const elements = useElements();
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
     const [process, setProcessing] = useState(false)
     const [clientSecret, setClientSecret] = useState("");
-    const name = 'Mahfujur Rahman';
-    const { user } = useAuth();
-    const email = "mahfujglobal@gmail.com";
-
-
-
 
     useEffect(() => {
-        fetch('https://glacial-shelf-30568.herokuapp.com/createPayment', {
+        fetch('http://localhost:5000/payment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,6 +29,7 @@ const CheckoutForm = ({ price }) => {
             });
 
     }, [price]);
+
 
     // pay button
     const payButton = {
@@ -78,8 +73,7 @@ const CheckoutForm = ({ price }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: name,
-                        email: email
+
                     },
                 },
             },
@@ -97,10 +91,10 @@ const CheckoutForm = ({ price }) => {
                 amount: paymentIntent.amount,
                 created: paymentIntent.created,
                 last4: paymentMethod.card.last4,
-                isPaid: "true",
+                isPaid: true,
                 transsaction: paymentIntent.client_secret.slice('_secret')[0]
             };
-            const uri = `https://glacial-shelf-30568.herokuapp.com/cartProducts/${user.email}`
+            const uri = `http://localhost:5000/cartProducts/${_id}`
             fetch(uri, {
                 method: 'PUT',
                 headers: {
@@ -121,10 +115,9 @@ const CheckoutForm = ({ price }) => {
         < >
             <form onSubmit={HandleSubmit} className="payment-form" style={{ display: "flex", justifyContent: 'center' }}>
                 <article
-                    style={{ background: "#111318", marginTop: 10, padding: 4, width: 500, marginBottom: 2 }}
+                    style={{ background: "#212529", marginTop: 10, padding: 4, width: 500, marginBottom: 2 }}
                 >
                     <CardElement
-
                         options={{
                             style: {
 
@@ -141,7 +134,7 @@ const CheckoutForm = ({ price }) => {
                             },
                         }}
                     />
-                    {process ? <Spinner animation="border" /> : <button style={payButton} type="submit" disabled={!stripe}>
+                    {process && !error ? <Spinner animation="border" /> : <button style={payButton} type="submit" disabled={!stripe}>
                         Pay $ {price}
                     </button>}
 

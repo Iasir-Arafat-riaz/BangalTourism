@@ -25,15 +25,12 @@ const Plan = (props) => {
           {/* <Card.Img className="purchase-img" variant="top" src={image} /> */}
           <Card.Body>
             <Card.Title>
-              {" "}
               <h1 className="divName ">{divisionName}</h1>
             </Card.Title>
             <Card.Text>
-              <h6>
-                <span className="divPlaces text-center">
-                  Total {totalPlace} Places
-                </span>
-              </h6>
+              <span className="divPlaces text-center fw-bold">
+                Total {totalPlace} Places
+              </span>
             </Card.Text>
           </Card.Body>
 

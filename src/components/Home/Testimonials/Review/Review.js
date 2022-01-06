@@ -6,7 +6,6 @@ import "./Review.css";
 
 const Review = (props) => {
   const { name, description, rating, email } = props.review;
-  console.log(description);
   const descriptionFixed = `${description.slice(0, 149)}......`;
   // console.log(descriptionFixed)
   return (
@@ -22,12 +21,12 @@ const Review = (props) => {
                 </b>
               </h6>
             </Card.Title>
-          
+
             <p className="text-center">{email}</p>
-        
+
             <Card.Text>
               <small className="reviewComment">
-                <i class="far fa-comment "></i> {descriptionFixed}
+                <i className="far fa-comment "></i> {descriptionFixed}
               </small>
             </Card.Text>
 
