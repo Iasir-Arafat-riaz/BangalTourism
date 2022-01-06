@@ -75,7 +75,7 @@ const ManageBooking = () => {
                   <th scope="row">{index + 1}</th>
                   <td>{item.name}</td>
                   <td>{item.email}</td>
-                  <td>{item.tourName}</td>
+                  <td className="text-uppercase">{item.tourName}</td>
                   <td>${item.tourPrice}</td>
                   <td>
                     {item.isPaid ? (
