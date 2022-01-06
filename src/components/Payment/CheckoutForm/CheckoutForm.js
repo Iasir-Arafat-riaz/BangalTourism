@@ -16,7 +16,7 @@ const CheckoutForm = ({ cartProduct }) => {
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
-        fetch('http://localhost:5000/payment', {
+        fetch('https://glacial-shelf-30568.herokuapp.com/payment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,11 +33,11 @@ const CheckoutForm = ({ cartProduct }) => {
 
     // pay button
     const payButton = {
-        border: '1px solid #98a1bc',
+        border: '1px solid black',
         padding: '5px 30px',
         borderRadius: '25px',
-        color: '#fff',
-        background: "#1D2029",
+        color: 'black',
+        background: "#fff",
         marginTop: '30px'
     }
 
@@ -94,7 +94,7 @@ const CheckoutForm = ({ cartProduct }) => {
                 isPaid: true,
                 transsaction: paymentIntent.client_secret.slice('_secret')[0]
             };
-            const uri = `http://localhost:5000/cartProducts/${_id}`
+            const uri = `https://glacial-shelf-30568.herokuapp.com/cartProducts/${_id}`
             fetch(uri, {
                 method: 'PUT',
                 headers: {
@@ -113,9 +113,10 @@ const CheckoutForm = ({ cartProduct }) => {
 
     return (
         < >
-            <form onSubmit={HandleSubmit} className="payment-form" style={{ display: "flex", justifyContent: 'center' }}>
+            <form onSubmit={HandleSubmit} className="payment-form" style={{ display: "flex", justifyContent: 'center', marginTop: 20 }}>
                 <article
-                    style={{ background: "#212529", marginTop: 10, padding: 4, width: 500, marginBottom: 2 }}
+                    className='shadow'
+                    style={{ background: "#fff", marginTop: 10, padding: 4, width: 500, marginBottom: 2 }}
                 >
                     <CardElement
                         options={{
@@ -125,7 +126,7 @@ const CheckoutForm = ({ cartProduct }) => {
                                     fontSize: '16px',
                                     color: '#fff',
                                     '::placeholder': {
-                                        color: '#98a1bc',
+                                        color: 'black',
                                     },
                                 },
                                 invalid: {
