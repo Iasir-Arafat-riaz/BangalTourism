@@ -197,7 +197,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("welcome to bangla tourism");
+  res.send("welcome to bangal tourism");
 });
 
 app.listen(port, () => {
