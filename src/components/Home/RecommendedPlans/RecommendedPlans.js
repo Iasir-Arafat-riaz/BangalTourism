@@ -21,7 +21,7 @@ const RecommendedPlans = () => {
     <div>
       <div className="custom-product">
         <h2 className="recommendedHeader text-center">
-          Recommended Tour Plans
+         <i> <b>Recommended Tour Plans</b></i>
         </h2>
         <Row data-aos="zoom-in" xs={1} md={3} className="g-4 m-3">
           {plans.map((plan, index) => (

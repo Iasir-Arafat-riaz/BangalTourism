@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
         <Container>
           <h4 className="nav-header"><span onClick={siteNameHandler}>Bangal Tourism</span></h4>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
