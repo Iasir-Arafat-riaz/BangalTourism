@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import "./Dashboard.css"
 
 const Dashboard = () => {
   const { handaleLogOut, admin } = useAuth();
