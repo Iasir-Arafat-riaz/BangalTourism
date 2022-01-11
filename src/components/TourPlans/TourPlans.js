@@ -49,7 +49,7 @@ const TourPlans = () => {
     <div className="">
       <div
         className="tourLists_header text-center p-5"
-        style={{ height: "260px" }}
+        style={{ height: "260px", marginTop:"45px" }}
       >
         <h1 className="text-light custom_font">
           Choose your desired destination
