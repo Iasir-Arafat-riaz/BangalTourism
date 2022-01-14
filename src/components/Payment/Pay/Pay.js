@@ -24,7 +24,7 @@ const Pay = () => {
 
 
     return (
-        <>
+        <div style={{marginTop:"100px"}}>
 
             {
                 <Elements stripe={stripePromise}>
@@ -33,7 +33,7 @@ const Pay = () => {
                     />
                 </Elements>
             }
-        </ >
+        </div >
     );
 };
 

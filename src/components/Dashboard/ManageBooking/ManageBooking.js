@@ -51,12 +51,12 @@ const ManageBooking = () => {
   }, [isNeedUpdated]);
 
   return (
-    <div className="py-3 px-1">
+    <div className="py-3 px-1" style={{ marginTop:"45px" }}>
       <h1 className="text-center mb-4">Manage All Orders</h1>
       {isOrdersLoading ? (
         <Loading />
       ) : (
-        <table className="table">
+        <table  className="table" >
           <thead>
             <tr>
               <th scope="col">#</th>

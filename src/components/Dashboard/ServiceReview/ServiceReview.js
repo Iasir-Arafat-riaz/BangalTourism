@@ -45,7 +45,7 @@ const {user}=useAuth()
     });
   };
     return (
-        <div className="review text-center">
+        <div className="review text-center" style={{marginTop:"50px"}}>
       <h1>Here write your review </h1>
 
       <textarea

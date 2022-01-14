@@ -20,7 +20,7 @@ const Testimonials = () => {
   }, []);
   
   return (
-    <div>
+    <div >
       <section id="reviews" className="testimonials p-md-3">
         <Fade bottom duration={2500} distance="40px">
           <div className="my-5 py-4">

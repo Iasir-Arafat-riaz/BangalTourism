@@ -17,7 +17,7 @@ const AddPlan = () => {
   };
 
   return (
-    <div className="add-Packages-Plan">
+    <div className="add-Packages-Plan" >
       <h2 className="common-header mt-3 text-center">
         You Can Add New Package Plan
       </h2>

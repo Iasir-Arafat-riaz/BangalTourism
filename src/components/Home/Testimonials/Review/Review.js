@@ -9,7 +9,7 @@ const Review = (props) => {
   const descriptionFixed = `${description.slice(0, 149)}......`;
   // console.log(descriptionFixed)
   return (
-    <div>
+    <div >
       <Col data-aos="flip-left">
         <Card id="rev" className="singleReview">
           <Card.Body>

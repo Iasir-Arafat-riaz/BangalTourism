@@ -30,7 +30,7 @@ const ManagePlan = () => {
 
 
     return (
-        <table className="table">
+        <table style={{marginTop:"60px"}} className="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
