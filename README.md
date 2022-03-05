@@ -1,1 +1,1 @@
-# Jinni Relocation Live site: https://jinni-relocation.firebaseapp.com/
+# Jinni Relocation Live site: https://bangal-tourism.web.app/
